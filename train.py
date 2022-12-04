@@ -39,9 +39,9 @@ def decode_tokens(tokens):
     return "".join(list(map(decode_token, tokens)))
 
 
-# instantiate GPT-like decoder model
+# instantiate a small GPT-like decoder model, similar to a small translation transformer
 
-model = PaLM(num_tokens=256, dim=512, depth=8)
+model = PaLM(dim=512, num_tokens=16000, depth=4, dim_head=64, heads=8)
 
 model = AutoregressiveWrapper(model, max_seq_len=SEQ_LEN)
 model.cuda()
