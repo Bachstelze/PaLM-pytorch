@@ -3,6 +3,7 @@ import deepspeed
 from palm_pytorch import PaLM
 from palm_pytorch.autoregressive_wrapper import AutoregressiveWrapper
 
+import argparse
 import random
 import tqdm
 import gzip
